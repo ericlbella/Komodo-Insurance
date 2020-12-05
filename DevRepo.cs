@@ -7,11 +7,21 @@ namespace DeveloperRepo
     public class DevRepo
     {
         public List<Developer> _listOfDevelopers = new List<Developer>();
+
+        Developer programmer = new Developer();
         
         //Create
-        public void AddDeveloperToList(Developer programmer)
+        public bool AddDeveloperToList(Developer programmer)
         {
+            int count = _listOfDevelopers.Count;
             _listOfDevelopers.Add(programmer);
+            if (count < _listOfDevelopers.Count)
+            {
+                return true;
+            }
+            else
+                return false;
+            
 
         }
 
@@ -30,7 +40,7 @@ namespace DeveloperRepo
             // Update the content
             if (oldProgrammer != null)
             {
-                oldProgrammer.IDNumber = newProgrammer.IDNumber;
+                //oldProgrammer.IDNumber = newProgrammer.IDNumber;
                 oldProgrammer.DeveloperFirstName = newProgrammer.DeveloperFirstName;
                 oldProgrammer.DeveloperLastName = newProgrammer.DeveloperLastName;
                 oldProgrammer.PluralSight = newProgrammer.PluralSight;
@@ -41,7 +51,7 @@ namespace DeveloperRepo
                 return false;
             }
 
-    }
+        }
 
     //Delete
     public bool RemoveDeveloperFromList(int idNumber)

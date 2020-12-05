@@ -9,14 +9,14 @@ namespace DeveloperRepo
         public int IDNumber { get; set; }
         public bool PluralSight { get; set; }
 
-        public Developer(string developerFirstName, string developerLastName, int idNumber, bool pluralSight) 
+        public Developer(string developerFirstName, string developerLastName, int idNumber, bool pluralSight)
         {
             DeveloperFirstName = developerFirstName;
             DeveloperLastName = developerLastName;
             IDNumber = idNumber;
             PluralSight = pluralSight;
         }
-        
+
         public Developer() { }
 
     }
